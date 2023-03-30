@@ -19,7 +19,7 @@ const Blogs = () => {
     }
   };
   const displayToast = () =>{
-     toast("This blog all ready added");
+     toast("This blog already added");
     };
   useEffect(() => {
     const loadBLogs = async () => {
