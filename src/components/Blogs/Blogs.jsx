@@ -1,5 +1,6 @@
 import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { toast } from "react-toastify";
 import Blog from "../Blog/Blog";
 import BookMarked from "../BookMarked/BookMarked";
 
@@ -14,9 +15,12 @@ const Blogs = () => {
         markedBlogs = [...marked,markedItem];
         setMarked(markedBlogs);
     } else{
-        console.log("eita add kora hoiche");
+        displayToast();
     }
   };
+  const displayToast = () =>{
+     toast("This blog all ready added");
+    };
   useEffect(() => {
     const loadBLogs = async () => {
       const res = await axios.get("data.json");
