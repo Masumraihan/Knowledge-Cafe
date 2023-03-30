@@ -8,9 +8,15 @@ const Blogs = () => {
   const [marked, setMarked] = useState([]);
   let markedBlogs = [];
   const handleMarkedBlogs = (id) => {
-    
+    const markedItem = blogs.find(blog => blog.id === id);
+    const isExits = marked.find(blog => blog === markedItem);
+    if (!isExits) {
+        markedBlogs = [...marked,markedItem];
+        setMarked(markedBlogs);
+    } else{
+        console.log("eita add kora hoiche");
+    }
   };
-  console.log(markedBlogs);
   useEffect(() => {
     const loadBLogs = async () => {
       const res = await axios.get("data.json");
@@ -32,7 +38,7 @@ const Blogs = () => {
         </div>
       </div>
       <div className='md:col-span-2 px-5 -order-1 md:order-1'>
-        <BookMarked></BookMarked>
+        <BookMarked markedBlogs={marked}></BookMarked>
       </div>
     </div>
   );
