@@ -17,7 +17,7 @@ const Blogs = () => {
       markedBlogs = [...marked, markedItem];
       setMarked(markedBlogs);
     } else {
-      toast("This blog already added");
+      toast("You Have Already Bookmarked This Blog");
     }
   };
 
