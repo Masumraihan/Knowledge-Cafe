@@ -41,7 +41,7 @@ const QuestionAns = () => {
           React is component based javascript library. react have a virtual dom
           in inside of react. if state changed then react use diff algorithm to
           re-render the code and inside of virtual DOM fixed the changes and
-          send the output final result in DOM.{" "}
+          send the output final result in DOM.
         </p>
       </div>
     </div>
